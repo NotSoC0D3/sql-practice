@@ -71,15 +71,15 @@ LIMIT 5;
 # 📂 ASSIGNMENT 2: SQL Fundamentals
 > **Focusing on:** `AVG` | `SUM` | `MIN` | `MAX` | `HAVING` | `GROUP BY` | `AS`
 
-### **Question 1: **  Find the total amount processed by each staff_id, ordered by highest grossing.
+### **Question 1:**  Find the total amount processed by each staff_id, ordered by highest grossing.
 
-### **Question 2: **  For each rating, calculate average rental rate, max length, and min replacement cost.
+### **Question 2:**  For each rating, calculate average rental rate, max length, and min replacement cost.
 
-### **Question 3: **  Identify the customer_id of patrons who have spent strictly more than $100 total.
+### **Question 3:**  Identify the customer_id of patrons who have spent strictly more than $100 total.
 
-### **Question 4: **  Break down total amount spent by customer_id, separated by processing staff_id.
+### **Question 4:**  Break down total amount spent by customer_id, separated by processing staff_id.
 
-### **Question 5: **  Find rating categories where avg rental_duration > 5 days. Display only the rating and the total count of films.
+### **Question 5:**  Find rating categories where avg rental_duration > 5 days. Display only the rating and the total count of films.
 
 # **ANSWERS**
 
