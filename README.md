@@ -1,5 +1,5 @@
 # 📂 ASSIGNMENT 1: SQL Fundamentals
-> **Focusing on:** `WHERE` | `IN` | `ORDER BY` | `LIMIT` | `LIKE` | `BETWEEN`t 
+> **Focusing on:** `WHERE` | `IN` | `ORDER BY` | `LIMIT` | `LIKE` | `BETWEEN` 
 
 ## Concepts Used: WHERE, IN, ORDER BY, LIMIT, ILIKE, LIKE, IN, BETWEEN, AND/OR
 
