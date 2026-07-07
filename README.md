@@ -1,4 +1,5 @@
-# Practice Assignment Queries using dvdrental dataset 
+# 📂 ASSIGNMENT 1: SQL Fundamentals
+> **Focusing on:** `WHERE` | `IN` | `ORDER BY` | `LIMIT` | `LIKE` | `BETWEEN`t 
 
 ## Concepts Used: WHERE, IN, ORDER BY, LIMIT, ILIKE, LIKE, IN, BETWEEN, AND/OR
 
@@ -18,10 +19,6 @@
 
 
 # **ANSWERS**
-
-==============================================================================
-ASSIGNMENT 1: SQL Fundamentals (WHERE, IN, ORDER BY, LIMIT, LIKE, BETWEEN)
-==============================================================================
 
 ### Question 1: 3 longest 'R' or 'NC-17' rated films
 ``` sql
