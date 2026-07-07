@@ -1,7 +1,6 @@
 # 📂 ASSIGNMENT 1: SQL Fundamentals
 > **Focusing on:** `WHERE` | `IN` | `ORDER BY` | `LIMIT` | `LIKE` | `BETWEEN` 
 
-## Concepts Used: WHERE, IN, ORDER BY, LIMIT, ILIKE, LIKE, IN, BETWEEN, AND/OR
 
 ### **Question 1:** Which query correctly retrieves the titles and lengths of the 3 longest 'R' or 'NC-17' rated films?
 
@@ -20,7 +19,7 @@
 
 # **ANSWERS**
 
-### Question 1: 3 longest 'R' or 'NC-17' rated films
+### A1
 ``` sql
 SELECT title, length 
 FROM film
@@ -29,7 +28,7 @@ ORDER BY length DESC
 LIMIT 3;
 ```
 
-### Question 2: Customers starting with 'A' and address_id between 100-200
+### A2
 ``` sql
 SELECT first_name, last_name 
 FROM customer
@@ -38,7 +37,7 @@ WHERE address_id BETWEEN 100 AND 200
 ORDER BY last_name;
 ```
 
-### Question 3: Up to 5 actors with 'son' in last name and specific first names
+### A3
 ``` sql
 SELECT first_name, last_name 
 FROM actor
@@ -47,7 +46,7 @@ WHERE last_name ILIKE '%son%'
 LIMIT 5;
 ```
 
-### Question 4: Top 7 highest rental rates, ends in 's', specific cost & rating
+### A4
 ``` sql
 SELECT title, rental_rate 
 FROM film
@@ -58,7 +57,7 @@ ORDER BY rental_rate DESC
 LIMIT 7;
 ```
 
-### Question 5: 5 most recent inactive customers from store 1 starting with M or S
+### A5
 ``` sql
 SELECT first_name, last_name, create_date 
 FROM customer
@@ -68,3 +67,91 @@ WHERE activebool = false
 ORDER BY create_date DESC
 LIMIT 5;
 ```
+
+# 📂 ASSIGNMENT 2: SQL Fundamentals
+> **Focusing on:** `AVG` | `SUM` | `MIN` | `MAX` | `HAVING` | `GROUP BY` | `AS`
+
+### **Question 1: **  Find the total amount processed by each staff_id, ordered by highest grossing.
+
+### **Question 2: **  For each rating, calculate average rental rate, max length, and min replacement cost.
+
+### **Question 3: **  Identify the customer_id of patrons who have spent strictly more than $100 total.
+
+### **Question 4: **  Break down total amount spent by customer_id, separated by processing staff_id.
+
+### **Question 5: **  Find rating categories where avg rental_duration > 5 days. Display only the rating and the total count of films.
+
+# **ANSWERS**
+
+### A1
+``` sql
+SELECT 
+    staff_id, 
+    SUM(amount) AS total_revenue
+FROM 
+    payment
+GROUP BY 
+    staff_id
+ORDER BY 
+    total_revenue DESC;
+```
+
+### A2
+``` sql
+SELECT 
+    rating, 
+    ROUND(AVG(rental_rate), 2) AS avg_rate, 
+    MAX(length) AS max_duration, 
+    MIN(replacement_cost) AS min_cost
+FROM 
+    film
+GROUP BY 
+    rating;
+```
+
+### A3
+``` sql
+SELECT 
+    customer_id, 
+    SUM(amount) AS total_spent
+FROM 
+    payment
+GROUP BY 
+    customer_id
+HAVING 
+    SUM(amount) > 100
+ORDER BY 
+    total_spent;
+```
+
+### A4
+``` sql
+SELECT 
+    customer_id, 
+    staff_id, 
+    SUM(amount) AS staff_specific_total
+FROM 
+    payment
+GROUP BY 
+    customer_id, 
+    staff_id
+ORDER BY 
+    customer_id;
+```
+
+### A5
+``` sql
+SELECT 
+    rating, 
+    COUNT(title) AS total_films
+FROM 
+    film
+GROUP BY 
+    rating
+HAVING 
+    AVG(rental_duration) > 5
+ORDER BY 
+    total_films;
+```
+
+
